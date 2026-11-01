@@ -1,84 +1,113 @@
-Music Store Data Analysis | PostgreSQL
+🎵 Music Store Data Analysis | PostgreSQL
 
 Project Overview
 
-An SQL-based analysis of a digital music store database to understand customer purchasing behaviour, sales performance, geographical revenue distribution, and music preferences.
+An SQL-based analysis of a digital music store database to understand customer purchasing behaviour, sales performance, revenue distribution, and music preferences.
 
-The project uses PostgreSQL to answer 11 business questions across three difficulty levels, translating raw transactional data into actionable business insights.
+The project addresses 11 business questions using PostgreSQL, progressing from basic queries to advanced analytical techniques.
 
-Business Objectives
+⸻
 
-* Identify high-value customers and revenue-generating locations.
-* Understand customer purchasing behaviour.
-* Identify popular music genres and artists.
-* Analyze sales distribution across countries.
-* Explore opportunities for targeted marketing and customer engagement.
-
-Tools Used
+🛠️ Tools Used
 
 * PostgreSQL
 * pgAdmin 4
 * SQL
 
-Database Schema
+📊 Database Schema
 
 The database contains interconnected tables covering customers, employees, invoices, tracks, albums, artists, and genres.
 
-Business Questions & Analytical Approach
+⸻
 
-Easy
+🔍 Business Questions & Approach
 
-Business Question	Analytical Approach
-Identify the senior-most employee.	Sorting employee levels in descending order.
-Which countries generate the most invoices?	GROUP BY, COUNT(), and ORDER BY.
-What are the top three invoice values?	Sorting invoice totals and LIMIT.
-Which city generates the highest revenue?	GROUP BY billing city and SUM() on invoice totals.
-Who is the highest-spending customer?	JOIN customer and invoice tables, followed by aggregation.
+1. Easy Level
 
-Moderate
+Q1. Identify the senior-most employee.
 
-Business Question	Analytical Approach
-Identify customers who listen to Rock music.	Multiple JOIN operations, filtering by genre, and DISTINCT.
-Find the top 10 Rock music artists.	JOIN artist, album, track, and genre tables; COUNT() and ranking.
-Identify tracks longer than average duration.	AVG() with a subquery.
+→ Sort employee levels in descending order and retrieve the top record.
 
-Advanced
+Q2. Which countries generate the most invoices?
 
-Business Question	Analytical Approach
-Calculate customer spending on individual artists.	Multiple JOINs and SUM() with customer and artist grouping.
-Find the most popular genre in each country.	Aggregation by country and genre, followed by ranking and tie handling.
-Find the highest-spending customer in each country.	Customer-level spending aggregation and ranking within countries, including ties.
+→ Group invoices by country and calculate invoice counts.
 
-Key Findings
+Q3. What are the top three invoice values?
 
-Numerical findings to be finalized using the query outputs.
+→ Sort invoice totals in descending order and retrieve the top three.
 
-Metric	Result
-Senior-most employee	To be confirmed
-Country with highest invoice count	To be confirmed
-Top three invoice values	To be confirmed
-Highest-revenue city	To be confirmed
-Highest-spending customer	To be confirmed
-Top Rock music artist	To be confirmed
-Average track duration	To be confirmed
-Most popular genre by country	To be confirmed
-Highest-spending customer by country	To be confirmed
+Q4. Which city generates the highest revenue?
 
-Business Insights
+→ Group invoices by billing city and calculate total revenue using SUM().
 
-The analysis helps identify opportunities to:
+Q5. Who is the highest-spending customer?
 
-* Focus retention strategies on high-value customers.
-* Target promotional campaigns towards high-revenue cities.
-* Develop genre-based marketing strategies.
-* Identify popular artists and customer music preferences.
-* Understand geographical differences in purchasing behaviour.
+→ Join customer and invoice tables and calculate total spending per customer.
 
-SQL Concepts Applied
+2. Moderate Level
+
+Q6. Identify customers who listen to Rock music.
+
+→ Join customer, invoice, track, and genre-related tables and filter Rock music listeners.
+
+Q7. Find the top 10 Rock music artists.
+
+→ Join artist, album, track, and genre tables and rank artists by track count.
+
+Q8. Identify tracks longer than average duration.
+
+→ Use a subquery with AVG() to identify tracks exceeding average duration.
+
+3. Advanced Level
+
+Q9. Calculate customer spending on individual artists.
+
+→ Use multiple joins and aggregation to calculate spending by customer and artist.
+
+Q10. Find the most popular genre in each country.
+
+→ Aggregate purchases by country and genre, then apply ranking techniques while accounting for ties.
+
+Q11. Find the highest-spending customer in each country.
+
+→ Calculate customer spending by country and use ranking techniques to identify top customers, including ties.
+
+⸻
+
+📈 Key Findings
+
+Numerical findings from the analysis:
+
+* Senior-most employee: To be added.
+* Country with the most invoices: To be added.
+* Top three invoice values: To be added.
+* Highest-revenue city: To be added.
+* Highest-spending customer: To be added.
+* Top Rock music artist: To be added.
+* Average track duration: To be added.
+* Most popular genres by country: To be added.
+* Highest-spending customers by country: To be added.
+
+⸻
+
+💡 Business Insights
+
+The analysis helps identify opportunities for:
+
+* Targeted marketing based on customer music preferences.
+* Customer retention through identification of high-value customers.
+* Geographical sales and promotional strategies.
+* Artist and genre-based promotional campaigns.
+
+⸻
+
+💻 SQL Concepts Applied
 
 SELECT · WHERE · DISTINCT · GROUP BY · ORDER BY · JOIN · COUNT() · SUM() · AVG() · Subqueries · Window Functions (where applicable).
 
-Project Structure
+⸻
+
+📁 Project Structure
 
 Music-Store-SQL-Analysis/
 │
@@ -88,9 +117,11 @@ Music-Store-SQL-Analysis/
 ├── music store data.zip
 └── README.md
 
-How to Run
+⸻
 
-1. Download or clone the repository.
+▶️ How to Run
+
+1. Clone or download this repository.
 2. Extract the database ZIP file.
 3. Restore the database in PostgreSQL using pgAdmin 4.
 4. Open Music_Store_Query.sql.
